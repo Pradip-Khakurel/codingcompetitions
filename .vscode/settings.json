@@ -4,6 +4,15 @@
         "cmath": "cpp",
         "unordered_map": "cpp",
         "vector": "cpp",
-        "tuple": "cpp"
+        "tuple": "cpp",
+        "xstring": "cpp",
+        "algorithm": "cpp",
+        "list": "cpp",
+        "memory": "cpp",
+        "xhash": "cpp",
+        "xlocale": "cpp",
+        "xmemory0": "cpp",
+        "xutility": "cpp",
+        "queue": "cpp"
     }
 }
