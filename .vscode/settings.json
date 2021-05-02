@@ -16,6 +16,8 @@
         "queue": "cpp",
         "utility": "cpp",
         "unordered_set": "cpp",
-        "xiosbase": "cpp"
+        "xiosbase": "cpp",
+        "set": "cpp",
+        "ios": "cpp"
     }
 }

@@ -7,6 +7,7 @@
 #include <tuple>
 #include <unordered_map>
 #include <set>
+#include <stdint.h>
 
 using namespace std;
 
@@ -17,14 +18,14 @@ struct Edge {
     int cost;
 };
 
+int INTEGER_MAX = 2147483647;
+
 int findMinCost(vector<vector<Edge>> &graph, int source, int target) {
     if(source == target) return 0;
 
     int n = graph.size();
 
-    vector<int> minDist(n);
-    for(int i=1;i<n;i++) 
-        minDist[i] = INT_MAX;
+    vector<int> minDist(n, INTEGER_MAX);
     minDist[source] = 0;
 
     set<pair_i> set;
@@ -37,7 +38,7 @@ int findMinCost(vector<vector<Edge>> &graph, int source, int target) {
         if(target == node_id) {
             return node->first;
         }
-
+        set.erase(node);
         for(auto ed : graph[node_id]) {
             int new_cost = ed.cost+minDist[node_id];
 
@@ -48,14 +49,15 @@ int findMinCost(vector<vector<Edge>> &graph, int source, int target) {
                 set.insert({minDist[ed.to], ed.to});
             }
         }
-
-        set.erase(node);
     }
 
-    return INT_MAX;
+    return INTEGER_MAX;
 }
 
 int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
     int S, n, p, r;
     string city, source, target;
     cin >> S;
